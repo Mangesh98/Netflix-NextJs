@@ -13,6 +13,7 @@ export default function Header() {
 					</Link>
 				</div>
 				<Nav />
+				
 			</header>
 		</>
 	);

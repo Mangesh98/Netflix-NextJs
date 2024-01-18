@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function Nav() {
 	return (
 		<nav className={styles.navbar}>
-			<div className="">
+			<div>
 				<ul className={styles.navbarList}>
 					<li className={styles.navbarItem}>
-						<Link className={styles.navbarLink} href="#">
+						<Link className={styles.navbarLink} href="/">
 							Home
 						</Link>
 					</li>

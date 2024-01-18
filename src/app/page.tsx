@@ -1,3 +1,12 @@
+import HeroSection from "./components/HeroSection";
+
 export default function Home() {
-	return <h1>Home Page</h1>;
+	return (
+		<>
+			<HeroSection
+				title={"LET'S WATCH MOVIE TOGETHER"}
+				imageUrl={"/about1.svg"}
+			/>
+		</>
+	);
 }
