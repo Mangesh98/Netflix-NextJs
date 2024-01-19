@@ -1,9 +1,10 @@
-import Link from "next/link";
+import MovieCard from "../components/MovieCard";
+import styles from "@/app/styles/common.module.css";
 
-// import fetch from "node-fetch";
 export default async function Movie() {
+	let data = [];
 	const url =
-		"https://netflix-data.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20";
+		"https://netflix-data.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=2&limit_suggestions=2";
 	const options = {
 		method: "GET",
 		headers: {
@@ -15,15 +16,22 @@ export default async function Movie() {
 	try {
 		const response = await fetch(url, options);
 		const result = await response.json();
-		console.log(result);
+		data = result.titles;
+		console.log(data);
 	} catch (error) {
 		console.error(error);
 	}
 
 	return (
 		<>
-			<h1>Movie Page</h1>
-			<Link href="/movie/12">This is link</Link>
+			<section className={styles.movieSection}>
+				<div className={styles.container}>
+					<h1>Movie Page</h1>
+					{data.map((curElem: any) => {
+						return <MovieCard key={curElem.id} {...curElem} />;
+					})}
+				</div>
+			</section>
 		</>
 	);
 }
