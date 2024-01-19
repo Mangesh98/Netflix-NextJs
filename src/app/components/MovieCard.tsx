@@ -34,7 +34,7 @@ const MovieCard: React.FC<MovieCardProps> = React.memo(({ jawSummary }) => {
 			</div>
 			<div className={styles.card_data}>
 				<h2>{truncatedTitle}</h2>
-				<p>{`${truncatedSynopsis} ...`}</p>
+				<p>{`${truncatedSynopsis}...`}</p>
 
 				<Link href={`/movie/${id}`}>
 					<button>Read More</button>
